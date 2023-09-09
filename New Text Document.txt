@@ -1,0 +1,131 @@
+//main function 
+
+
+
+package mid.prep;
+
+
+public class MidPrep {
+    public static void main(String[] args) {
+        // Create boxes using different constructors
+        Box box1 = new Box();  // Default constructor
+        Box box2 = new Box(2.0);  // Constructor with single parameter
+        Box box3 = new Box(3.0, 4.0, 5.0);  // Constructor with three parameters
+        Box box4 = new Box(box3);  // Copy constructor
+
+        // Set dimensions of box1 using setter methods
+        box1.setWidth(2.0);
+        box1.setHeight(3.0);
+        box1.setDepth(4.0);
+
+        // Calculate volume of each box
+        double volume1 = box1.volume();
+        double volume2 = box2.volume();
+        double volume3 = box3.volume();
+        double volume4 = box4.volume();
+
+        // Print details and volume of each box
+        System.out.println("Box 1 Details: " + box1);
+        System.out.println("Box 1 Volume: " + volume1);
+
+        System.out.println("Box 2 Details: " + box2);
+        System.out.println("Box 2 Volume: " + volume2);
+
+        System.out.println("Box 3 Details: " + box3);
+        System.out.println("Box 3 Volume: " + volume3);
+
+        System.out.println("Box 4 Details: " + box4);
+        System.out.println("Box 4 Volume: " + volume4);
+
+        // Check if box3 is equal to box4
+        boolean isEqual = box3.equalTo(box4);
+        System.out.println("Box 3 is equal to Box 4: " + isEqual);
+    }
+}
+
+
+
+
+// class part 
+
+
+package mid.prep;
+
+public class Box {
+   
+    private double width;
+    private double height;
+    private double depth;
+
+    // Constructors
+    public Box() {
+        this.width = 1.0;
+        this.height = 1.0;
+        this.depth = 1.0;
+    }
+
+    public Box(double len) {
+        this.width = len;
+        this.height = len;
+        this.depth = len;
+    }
+
+    public Box(double width, double height, double depth) {
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
+    }
+
+    public Box(Box box) {
+        this.width = box.width;
+        this.height = box.height;
+        this.depth = box.depth;
+    }
+
+    // Getters and setters
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getDepth() {
+        return depth;
+    }
+
+    public void setDepth(double depth) {
+        this.depth = depth;
+    }
+
+    // Methods
+    public void setDim(double width, double height, double depth) {
+        this.width = width;
+        this.height = height;
+        this.depth = depth;
+    }
+
+    public boolean equalTo(Box o) {
+        return this.width == o.width && this.height == o.height && this.depth == o.depth;
+    }
+
+    public double volume() {
+        return width * height * depth;
+    }
+
+    @Override
+    public String toString() {
+        return "Box [width=" + width + ", height=" + height + ", depth=" + depth + "]";
+    }
+}
+    
+
