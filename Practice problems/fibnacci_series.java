@@ -22,7 +22,7 @@ public class fibnacci_series {
 
         int num = n.nextInt();
 
-        fibonacci(num);
+        fibonacci(num); 
 
     }
 }

@@ -26,5 +26,4 @@ public class sum_of_array {
 
         System.out.println("\n"+sum);
 
-    }
-}
+    }}

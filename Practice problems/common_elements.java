@@ -20,7 +20,7 @@ public class common_elements {
                 if(array1[i].equals(array2[j]))
                 {
                     set.add(array1[i]);
-                }
+                } 
             }
         }
  
