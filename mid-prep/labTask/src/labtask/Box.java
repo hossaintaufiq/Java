@@ -2,9 +2,9 @@
 package labtask;
 
 public class Box {
-    public double width;
-    public double height;
-    public double depth;
+    private double width;
+    private double height;
+    private double depth;
     
     
     public Box(){
@@ -58,13 +58,27 @@ public class Box {
     
     
 //    extra methods
-    public double volume(double width, double height , double depth){
+    public double volume(){
         return width*height*depth;
     }
+    
+    public void setDim (double width,double height , double depth){
+        this.width=width;
+        this.height=height;
+        this.depth=depth;
+    }
             
+     public boolean equalTo(Box o) {
+        return this.width == o.width && this.height == o.height && this.depth == o.depth;
+    }
+//    @Override
+//    public String toString() {
+//        return "Box [width=" + width + ", height=" + height + ", depth=" + depth + "]";
+//    }
+    
     @Override
-    public String toString() {
-        return "Box [width=" + width + ", height=" + height + ", depth=" + depth + "]";
+    public String toString(){
+        return "Box [width ="+ width + ", height= "+ height + ", depth="+ depth+ "]";
     }
 
 }
