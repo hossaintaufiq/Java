@@ -1,0 +1,125 @@
+class part//////////////
+
+
+package testbox;
+
+public class Box {
+    private double width; 
+    private double height ; 
+    private double depth; 
+    
+    public Box (){
+         this.width=1.00;
+       this.height=1.00;
+       this.depth=1.00;
+    }
+    
+    public Box (double len){
+         this.width=len;
+    }
+    public Box (double width,double height,double depth){
+         this.width=width;
+       this.height=height;
+       this.depth=depth;
+    }
+//    public Box (Box box){
+//         this.width=box.width;
+//         this.height=box.height;
+//         this.depth=box.depth;
+//    }
+    public Box (Box box){
+        this.width=box.width;
+        this.height=box.height;
+        this.depth=box.depth;
+    }
+    public double getWidth(){
+        return width;
+    }
+    public double getHeight(){
+        return width;
+    }
+    public double getDepth(){
+        return width;
+    }
+    
+    public void setWidth(double width){
+        this.width=width;
+    }
+     public void setHeight(double height){
+        this.height=height;
+    }
+      public void setDepth(double depth){
+        this.depth=depth;
+    }
+      
+      public  void setDim (double width,double height,double depth){
+         this.width=width;
+       this.height=height;
+       this.depth=depth;
+    }
+      
+//      public boolean equalTo(Box o){
+//          return this.width== o.width && this.height== o.height && this.depth==o.depth;
+//      }
+      
+      public boolean equalTo(Box o ){
+          return this.width==o.width && this.height==o.height&& this.depth==o.depth;
+      }
+      public double volume(){
+          return depth*height*width;
+      }
+      
+      @Override
+      public String toString(){
+      return "Box[width= "+ width+",height= "+height+", depth= "+depth+"]";
+      }
+}
+
+
+
+////main part 
+
+package testbox;
+
+public class TestBox {
+    public static void main(String[] args) {
+        Box b1= new Box();
+        Box b2=new Box();
+        Box b3 =new Box();
+        Box b4= new Box(b3);
+        
+        
+        b2.setWidth(5.00);
+        
+        
+        b3.setDepth(3.40);
+        b3.setWidth(4.11);
+        b3.setHeight(5.22);
+        
+        
+        b4.setDepth(3.40);
+        b4.setWidth(4.11);
+        b4.setHeight(5.22);
+        
+        
+        
+        
+        
+//        box 1 info
+        System.out.println("B1="+b1.toString());
+        
+//        box 2 info
+        System.out.println("B2="+b2.toString());
+        System.out.println("B2 volume= "+ b2.volume());
+        
+//        box 3 info 
+         System.out.println("B3="+b3.toString());
+        System.out.println("B3 volume= "+ b3.volume());
+        
+//        box 4 
+        System.out.println("Box 4 is equal to box 3 : "+ b4.equalTo(b3));
+        
+        
+    }
+    
+}
